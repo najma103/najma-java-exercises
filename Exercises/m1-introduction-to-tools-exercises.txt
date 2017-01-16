@@ -1,0 +1,110 @@
+Introduction to Tools Exercises
+-------------------------------
+
+The following exercises cover the command line, and Git.
+
+Your instructor will help you navigate to the "playground", and open this file.
+
+Getting to the Playground
+-------------------------
+
+The first step is to open your shell, and make sure you are in the playground.
+
+$ cd ~/workspaces/<yourname>-Java-Exercises/m1-w1d1-java-intro-to-tools-exercises
+$ pwd
+/Users/<yourname>/workspaces/<yourname>-Java-Exercises/m1-w1d1-java-intro-to-tools-exercises
+
+Once you have confirmed you are in the playground, you may proceed with the exercises. 
+
+If you are having trouble finding the playground, please ask another student to review your steps. A second pair of eyes is one of the best debugging tools a programmer has. If you are still unable to enter the playground, please see one of the instructors.
+
+Exercises
+---------
+
+Type, or copy-and-paste your answers immediately below the questions.  When you are done, you will need to create a Git Pull Request in order to submit your work. One of the instructors will then review your answers.
+
+1.  What does the ~ (tilde) character in the `cd ~/workspaces/<yourname>-Java-Exercises/m1-w1d1-java-intro-to-tools-exercises` command from above refer to?
+
+2.  What is your current directory location?
+
+3.  Display a list of all the files and folders, including the dot-files-and-folders, in your current directory locaton.
+
+4.  What are the names of the files, including any dot-files, from Question 3?
+
+5.  What are the names of the folders, including any dot-folders, from Question 3?
+
+6.  The `less` utility is commonly used to read-only view the contents of files. 
+    To use, simply enter `less <file-name>`. 
+    You may PageUp, PageDown, and search within `less`. Press Q to quit. Press H for additional help.
+    Try:
+    $ less pagila.sql
+   
+    What are the last three lines in pagila.sql?
+    (While an extremely large number of spacebars, or even worse, returns, will eventually get you to the bottom of the file, see if you can find another way to get to the end with a single keystroke. Hint: Look in additional help.)
+    
+7.  Another useful read-only utility is `cat` which streams the contents of the file. 
+    It is commonly connected to some other utility such as `sort` or `grep` using a pipe.
+    Try:
+    $ cat pagila.sql
+    
+    What happened?
+    
+8.  `grep` is a work horse utility that is used to search the contents of files.
+    It is commonly connected via a pipe to another utility which streams file contents to it.
+    To use, simply enter `grep -i <word-to-search>`.  The -i tells `grep` to ignore case.
+    Try:
+    $ cat pagila.sql | grep -i ohio
+    
+    What was displayed?
+    
+    Try:
+    $ cat pagila.sql | grep -i 'buenos aires'      ### Quotes are needed because of the embedded space.
+    
+    Did grep find "Buenos Aires" in the file (Yes/No)?
+    
+    Try:
+    $ cat pagila.sql | grep -i horse
+    
+    Did grep find any occurances of "horse" (Yes/No)?
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+You are strongly encouraged to make `less`, `cat | grep`, and the undiscussed, `find -exec grep` (look it up) a part of your regular commannd line toolkit.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. 	java-helloworld contains a representation of a simple Helloworld Eclipse project.  
+    Change directory into java-helloworld, and list all its files and folders.
+
+10. pom.xml is a Maven build file. You will learn more about this file later in the module.  
+    View the file with less.
+    
+11. Change into src/main/java/com/techelevator directory under java-helloworld.
+
+    Show your current working directory. 
+
+    List all its files and folders in current working directory.
+    
+12. "Helloworld.java" is the sole source code file of the Helloworld application.
+    Make a backup of the file named "Helloworld.java.backup"
+    
+    Show the command(s) you used.
+    
+    List all the files and folders in the src/main/java/com/techelevator directory after the backup has been made.
+    
+13. Rename "Helloworld.java.backup" to "Helloworld.java.copy"
+
+    Show the command(s) you used.
+    
+    List all the files and folders in the src/main/java/com/techelevator directory after the file was renamed.
+    
+14. Remove the backup file, "Helloworld.java.copy"
+
+    Show the command(s) you used.
+    
+    List all the files and folders in the src/main/java/com/techelevator directory after removing the backup.
+    
+15. Once you are completed, navigate to the root playground folder "/Users/<your-name>/workspaces/<yourname-Java-Exercises/m1-w1d1-intro-to-tools-exercises" and stage files in git.
+	You will use "git add ." to stage all files.
+	
+16. Use the "git status" command to check for any files that have not been staged. If there aren't any, then you can commit with git commit -m "My first Git Commit"
+
+17. Push your changes to BitBucket using "git push origin master", and an instructor will review your work.
