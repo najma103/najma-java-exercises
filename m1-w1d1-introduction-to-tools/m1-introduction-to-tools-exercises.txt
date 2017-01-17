@@ -24,14 +24,23 @@ Exercises
 Type, or copy-and-paste your answers immediately below the questions.  When you are done, you will need to create a Git Pull Request in order to submit your work. One of the instructors will then review your answers.
 
 1.  What does the ~ (tilde) character in the `cd ~/workspaces/<yourname>-Java-Exercises/m1-w1d1-java-intro-to-tools-exercises` command from above refer to?
+Home directory of the logged in user
 
 2.  What is your current directory location?
+/Users/cborders/Development/workspaces/java-exercises/m1-w1d1-introduction-to-tools
 
 3.  Display a list of all the files and folders, including the dot-files-and-folders, in your current directory locaton.
+ls -a
 
 4.  What are the names of the files, including any dot-files, from Question 3?
+.DS_Store
+m1-introduction-to-tools-exercises.txt
+pagila.sql
 
 5.  What are the names of the folders, including any dot-folders, from Question 3?
+.
+..
+java-helloworld
 
 6.  The `less` utility is commonly used to read-only view the contents of files. 
     To use, simply enter `less <file-name>`. 
@@ -41,6 +50,9 @@ Type, or copy-and-paste your answers immediately below the questions.  When you 
    
     What are the last three lines in pagila.sql?
     (While an extremely large number of spacebars, or even worse, returns, will eventually get you to the bottom of the file, see if you can find another way to get to the end with a single keystroke. Hint: Look in additional help.)
+--
+-- PostgreSQL database dump complete
+--
     
 7.  Another useful read-only utility is `cat` which streams the contents of the file. 
     It is commonly connected to some other utility such as `sort` or `grep` using a pipe.
@@ -48,6 +60,7 @@ Type, or copy-and-paste your answers immediately below the questions.  When you 
     $ cat pagila.sql
     
     What happened?
+It printed out the whole file to the terminal.
     
 8.  `grep` is a work horse utility that is used to search the contents of files.
     It is commonly connected via a pipe to another utility which streams file contents to it.
@@ -56,16 +69,19 @@ Type, or copy-and-paste your answers immediately below the questions.  When you 
     $ cat pagila.sql | grep -i ohio
     
     What was displayed?
+Only the lines that contained Ohio.
     
     Try:
     $ cat pagila.sql | grep -i 'buenos aires'      ### Quotes are needed because of the embedded space.
     
     Did grep find "Buenos Aires" in the file (Yes/No)?
+Yes
     
     Try:
     $ cat pagila.sql | grep -i horse
     
     Did grep find any occurances of "horse" (Yes/No)?
+No
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 You are strongly encouraged to make `less`, `cat | grep`, and the undiscussed, `find -exec grep` (look it up) a part of your regular commannd line toolkit.
@@ -87,8 +103,12 @@ You are strongly encouraged to make `less`, `cat | grep`, and the undiscussed, `
     Make a backup of the file named "Helloworld.java.backup"
     
     Show the command(s) you used.
+	
+cp Helloworld.java Helloworld.java.backup
     
     List all the files and folders in the src/main/java/com/techelevator directory after the backup has been made.
+Helloworld.java
+Helloworld.java.backup
     
 13. Rename "Helloworld.java.backup" to "Helloworld.java.copy"
 
