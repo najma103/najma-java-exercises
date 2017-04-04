@@ -38,6 +38,7 @@
 				<label for="password">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
 			</div>
+			<input type="hidden" value="${param.destination}" name="destination"/>
 			<button type="submit" class="btn btn-default">Login</button>
 		</form>
 	</div>

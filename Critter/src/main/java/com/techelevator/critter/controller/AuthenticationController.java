@@ -30,11 +30,16 @@ public class AuthenticationController {
 	
 	@RequestMapping(path="/login", method=RequestMethod.POST)
 	public String login(@RequestParam String userName, 
-						@RequestParam String password, 
+						@RequestParam String password,
+						@RequestParam(required=false) String destination,
 						ModelMap model) {
 		if(userDAO.searchForUsernameAndPassword(userName, password)) {
 			model.put("currentUser", userName);
-			return "redirect:/users/"+userName;
+			if(destination != null) {
+				return "redirect:" + destination;
+			} else {
+				return "redirect:/users/"+userName;
+			}
 		} else {
 			return "redirect:/login";
 		}
@@ -47,3 +52,15 @@ public class AuthenticationController {
 		return "redirect:/";
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
