@@ -1,8 +1,15 @@
 package com.techelevator.controller;
 
-import org.springframework.stereotype.Controller;
+import java.math.BigDecimal;
 
-@Controller
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.techelevator.calculator.TaxCalculator;
+
+@RestController
 public class ApiController {
 
 	/**
@@ -10,15 +17,11 @@ public class ApiController {
 	 * controllers that handle view logic from controllers that provide output to clients making
 	 * asynchronous HTTP requests.
 	 */
-    // GET: Api
-//    public String getTax(String billingZipCode, double subtotal) {
-//        if (String.IsNullOrEmpty(billingZipCode)) {
-//            return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
-//        }
-//
-//        double taxRate = taxCalculator.GetTaxRate(billingZipCode);
-//        double taxTotal = Math.Round(subtotal * taxRate, 2);         
-//        return Json(taxTotal, JsonRequestBehavior.AllowGet);
-//    }
+	@RequestMapping(path="/api/getTax", method=RequestMethod.GET)
+    public BigDecimal getTax(@RequestParam String billingZipCode, @RequestParam double subtotal) {
+		double taxRate = TaxCalculator.getTaxRate(billingZipCode);
+		BigDecimal taxTotal = new BigDecimal(subtotal * taxRate).setScale(2, BigDecimal.ROUND_HALF_DOWN);
+        return taxTotal;
+    }
 
 }
