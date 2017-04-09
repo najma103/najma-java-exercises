@@ -78,7 +78,13 @@ public class Exercises {
 	 rotateLeft3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] rotateLeft3(int[] nums) {
-		return new int[] {};
+		int[] newArray = new int[3];
+		if(nums.length >= 3){
+			newArray[0] = nums[1];
+			newArray[1] = nums[2];
+			newArray[2] = nums[0];
+		}
+		return newArray;
 	}
 
 	/*
@@ -89,7 +95,13 @@ public class Exercises {
 	 reverse3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] reverse3(int[] nums) {
-		return new int[] {};
+		int[] newArr = new int[nums.length];
+		int index = 0;
+		for(int i = nums.length - 1; i >= 0; i--){
+			newArr[index] = nums[i];
+			index++;
+		}
+		return newArr;
 	}
 
 	/*
@@ -175,7 +187,13 @@ public class Exercises {
 	 sum28([1, 2, 3, 4]) → false
 	 */
 	public boolean sum28(int[] nums) {
-		return false;
+		int sum = 0;
+		for(int i = 0; i < nums.length; i++){
+			if(nums[i] == 2){
+				sum += nums[i];
+			}
+		}
+		return sum == 8;
 	}
 
 }
