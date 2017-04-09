@@ -25,7 +25,7 @@ public class Exercises {
 	 sameFirstLast([1, 2, 1]) → true
 	 */
 	public boolean sameFirstLast(int[] nums) {
-		if(nums.length >= 0){
+		if(nums.length > 0){
 			if(nums[0] == nums[nums.length - 1]){
 				return true;
 			}
@@ -49,6 +49,10 @@ public class Exercises {
 	 commonEnd([1, 2, 3], [1, 3]) → true
 	 */
 	public boolean commonEnd(int[] a, int[] b) {
+		if((a[0] == b[0]) || (a[a.length - 1] == b[b.length - 1])){
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -59,7 +63,11 @@ public class Exercises {
 	 sum3([7, 0, 0]) → 7
 	 */
 	public int sum3(int[] nums) {
-		return 0;
+		int total = 0;
+		for(int i = 0; i < nums.length; i++){
+			total += nums[i];
+		}
+		return total;
 	}
 
 	/*
