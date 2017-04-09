@@ -112,7 +112,14 @@ public class Exercises {
 	 maxEnd3([2, 11, 3]) → [3, 3, 3]
 	 */
 	public int[] maxEnd3(int[] nums) {
-		return new int[] {};
+		int[] arr = new int[3];
+		if(nums[0] > nums[2]){
+			arr = new int[] {nums[0], nums[0], nums[0]};
+		}
+		else {
+			arr = new int[] {nums[2], nums[2], nums[2]};
+		}
+		return arr;
 	}
 
 	/*
@@ -123,7 +130,18 @@ public class Exercises {
 	 sum2([1, 1, 1, 1]) → 2
 	 */
 	public int sum2(int[] nums) {
-		return 0;
+		int sum = 0;
+		if(nums.length > 1){
+			for(int i = 0; i < 2; i++){
+				sum += nums[i];
+			}
+			return sum;
+		} else if (nums.length > 0) {
+			return nums[0];
+		} else {
+			return 0;
+		}
+		
 	}
 
 	/*
@@ -134,7 +152,10 @@ public class Exercises {
 	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
 	 */
 	public int[] middleWay(int[] a, int[] b) {
-		return new int[] {};
+		int midA = a.length / 2;
+		int midB = b.length / 2;
+		
+		return new int[] {a[midA], b[midB]};
 	}
 
 	/*
