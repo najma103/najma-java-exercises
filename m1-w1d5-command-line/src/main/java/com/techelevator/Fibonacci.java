@@ -1,4 +1,5 @@
 package com.techelevator;
+import java.util.Scanner;
 
 /*
  The Fibonacci numbers are the integers in the following sequence:  
@@ -17,7 +18,31 @@ Please enter the Fibonacci number: 25
 public class Fibonacci {
 
 	public static void main(String[] args) {
-
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Pleasae enter the Finonacci Numer: ");
+		int input = scanner.nextInt();
+		int[] arr = new int[input];
+		
+		arr[0] = 0;
+		arr[1] = 1;
+		if(input > 1){
+			for(int i = 2; i < input; i++){
+				int temp = arr[i - 2] + arr[i - 1];
+				if(temp > input){
+					break;
+				} else {
+					arr[i] = temp;
+				}
+			}
+		}
+		System.out.print(arr[0] + ", ");
+		for(int i = 1; i < arr.length; i++){
+			if(arr[i] > 0){
+				System.out.print(arr[i] + ", ");
+			}
+		}
+		
+		//System.out.println(String.join(arr.toString(),  ","));
 	}
 
 }
