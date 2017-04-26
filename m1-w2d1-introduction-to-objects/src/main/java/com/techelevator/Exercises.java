@@ -9,7 +9,7 @@ public class Exercises {
 	 helloName("X") → "Hello X!"
 	 */
 	public String helloName(String name) {
-		return null;
+		return ("Hello " + name + "!");
 	}
 
 	/*
@@ -20,7 +20,7 @@ public class Exercises {
 	 makeAbba("What", "Up") → "WhatUpUpWhat"
 	 */
 	public String makeAbba(String a, String b) {
-		return null;
+		return a+b+b+a;
 	}
 
 	/*
@@ -305,7 +305,21 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		return null;
+		StringBuffer buffer = new StringBuffer(str.length());
+		String newStr;
+		if(str.length() < 2){
+			return str;
+		}
+		buffer.append(str.charAt(0));
+		for(int i = 1; i < str.length()-1; i++){
+			if(!(str.charAt(i) == 'x')){
+				buffer.append(str.charAt(i));
+			}
+		}
+		buffer.append(str.charAt(str.length()-1));
+		newStr  = buffer.toString();
+		System.out.println(newStr);
+		return newStr;
 	}
 
 	/*
