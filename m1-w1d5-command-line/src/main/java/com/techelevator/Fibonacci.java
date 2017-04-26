@@ -42,7 +42,6 @@ public class Fibonacci {
 			}
 		}
 		
-		//System.out.println(String.join(arr.toString(),  ","));
 	}
 
 }
