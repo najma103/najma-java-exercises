@@ -294,7 +294,16 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		return 0;
+        int count = 0;
+        for (int i = 0; i < str.length() - 2; i++)
+        {
+            if (str.substring(i, 2) == (str.substring(str.length() - 2)))
+            {
+                count++;
+            }
+        }
+		
+		return count;
 	}
 
 	/*
@@ -318,7 +327,6 @@ public class Exercises {
 		}
 		buffer.append(str.charAt(str.length()-1));
 		newStr  = buffer.toString();
-		System.out.println(newStr);
 		return newStr;
 	}
 

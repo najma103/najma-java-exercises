@@ -4,15 +4,16 @@ public class BubbleSort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] unsortedIntArray = new int[]{2,5,8,3,9,2,20,30,25,22,24,21,1};
-		
+		int[] unsortedIntArray = new int[]{199,2,5,8,3,9,2,20,30,25,22,24,21,1};
+	
+		// sorted array
 		int[] sortedArray = BubbleSortAscendingOrder(unsortedIntArray);
-		
+
 		for(int i = 0; i < sortedArray.length; i++){
+			
 			System.out.print(sortedArray[i] + ", ");
 		}
 		
-
 	}
 	
 	public static int[] BubbleSortAscendingOrder(int[] intArray){
